@@ -5,6 +5,7 @@ const router = express.Router();
 const channelIds = [
   'UCAU_6P-M2VHKePIpu5736ag', // codesmith
   'UCFbNIlppjAuEX4znoulh0Cw', // Web Dev Simplified
+  'UC8butISFwT-Wl7EV0hUK0BQ', //free code camp
   'UCsBjURrPoezykLs9EqgamOA', //fireship
   'UCrqAGUPPMOdo0jfQ6grikZw', //colt steele
   'UCJZv4d5rbIKd4QHMPkcABCw', //Kevin Powell

@@ -15,6 +15,7 @@ export default function NavBar() {
           <li><Link to="/youtube">YouTube Playlists</Link></li>
           <li><Link to="/documentation">Documentation</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/login">Login</Link></li>
         </ul>
       </div>
       <div className={styles.navRight}>
