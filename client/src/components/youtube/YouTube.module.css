@@ -33,3 +33,21 @@
   text-align: center;
   margin: 0;
 }
+
+.search {
+  position: absolute;
+  top: 1rem;
+  right: 0.2rem;
+  z-index: 1001;
+  padding: 5px 5px;
+  height: 0px;
+}
+
+.submitbtn {
+  padding: 5px 8px;
+  font-size: 12px;
+  width: 80px;
+  height: 30px;
+  background-color: grey;
+  margin-left: 10px;
+}

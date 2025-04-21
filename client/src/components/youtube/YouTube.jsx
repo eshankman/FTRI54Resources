@@ -24,6 +24,10 @@ const YouTube = () => {
 
   return (
     <div>
+      <div className={styles.search}>
+        <input placeholder="Type Topic Here"></input>
+        <button className={styles.submitbtn}>Submit</button>
+      </div>
       {Object.entries(groupedPlaylists).map(([channelTitle, playlists]) => (
         <div key={channelTitle} className={styles.playlistSection}>
           <h2>{channelTitle} Playlists</h2>

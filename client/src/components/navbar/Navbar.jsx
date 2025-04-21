@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 export default function NavBar() {
@@ -7,17 +8,17 @@ export default function NavBar() {
     <nav className={styles.nav}>
       <div className={styles.navLeft}>
         <ul>
-          <li><a href="/index.html">Home</a></li>
-          {/* <li><a href="/JavaScript/javascript.html">JavaScript</a></li>
-          <li><a href="/HTML/html.html">HTML</a></li>
-          <li><a href="/CSS/css.html">CSS</a></li> */}
-          <li><a href="/src/pages/vscode_ext/vscodeext.jsx">VS Code Extensions</a></li>
-          <li><a href="/src/pages/shortcuts/vscodeshortcuts.jsx">VS Code Shortcuts</a></li>
-          <li><a href="/src/pages/github/github.jsx">Git/GitHub</a></li>
-          <li><a href="/src/pages/documentation/documentation.jsx">Documentation</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/vscode-extensions">VS Code Extensions</Link></li>
+          <li><Link to="/vscode-shortcuts">VS Code Shortcuts</Link></li>
+          <li><Link to="/github">Git/GitHub</Link></li>
+          <li><Link to="/youtube">YouTube Playlists</Link></li>
+          <li><Link to="/documentation">Documentation</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
       <div className={styles.navRight}>
+        {/* Any right-side content here */}
       </div>
     </nav>
   );

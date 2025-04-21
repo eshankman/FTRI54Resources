@@ -1,16 +1,25 @@
-import { useState } from 'react';
 import React from 'react';
-import Playlists from './components/youtube/YouTube';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainPage from './components/MainPage/mainPage';
+import YouTube from './components/youtube/YouTube';
+import Contact from './components/Contact/Contact';
 import Navbar from './components/navbar/Navbar';
-// import MainPage from './components/MainPage/mainPage';
+import './App.css';
 
 const App = () => {
   return (
-    <div className="bundle">
-      <Navbar />
-      <Playlists />
-    </div>
+    <BrowserRouter>
+      <div className="bundle">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/youtube" element={<YouTube />} />
+
+          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 

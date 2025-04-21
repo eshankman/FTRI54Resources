@@ -1,0 +1,17 @@
+.formInfo {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  width: 25vw;
+  padding: 20px 20px;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.message {
+  height: 5rem;
+  resize: vertical;
+  white-space: pre-wrap;
+  overflow-wrap: normal;
+  justify-content: center;
+}
