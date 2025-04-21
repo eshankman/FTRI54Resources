@@ -29,7 +29,9 @@ export default function Contact() {
             Update Content Req.
           </label>
         </div>
-        <button type="submit">Send</button>
+        <button className={styles.btn} type="submit">
+          Send
+        </button>
       </form>
     </div>
   );

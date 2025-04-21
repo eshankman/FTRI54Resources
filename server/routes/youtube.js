@@ -3,12 +3,12 @@ import fetch from 'node-fetch';
 
 const router = express.Router();
 const channelIds = [
+  'UCAU_6P-M2VHKePIpu5736ag', // codesmith
   'UCFbNIlppjAuEX4znoulh0Cw', // Web Dev Simplified
-  'UCNfR6RLEa0UFS39oTHC1Rfw', // codesmith
   'UCsBjURrPoezykLs9EqgamOA', //fireship
-  'UCNxUdsuH8-kEGIwSD0r8RhQ', //max s.
   'UCrqAGUPPMOdo0jfQ6grikZw', //colt steele
   'UCJZv4d5rbIKd4QHMPkcABCw', //Kevin Powell
+  'UC4SVo0Ue36XCfOyb5Lh1viQ', //bro code
 ];
 
 router.get('/playlists', async (req, res) => {

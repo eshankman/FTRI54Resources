@@ -15,3 +15,13 @@
   overflow-wrap: normal;
   justify-content: center;
 }
+
+.btn {
+  margin-top: 2rem;
+  background-color: grey;
+}
+
+.btn:hover {
+  background-color: blue;
+  color: black;
+}

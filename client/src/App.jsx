@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './components/MainPage/mainPage';
 import YouTube from './components/youtube/YouTube';
-import Contact from './components/Contact/Contact';
+import Contact from './components/contact/Contact';
 import Navbar from './components/navbar/Navbar';
 import './App.css';
 
