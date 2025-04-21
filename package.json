@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "client": "cd client && npm run dev",
-    "server": "cd server && npm run dev"
+    "server": "cd server && npm run server"
   },
   "dependencies": {
     "react": "^19.0.0",
