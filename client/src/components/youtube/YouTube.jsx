@@ -7,19 +7,25 @@ const YouTube = () => {
   const [groupedPlaylists, setGroupedPlaylists] = useState({});
 
   useEffect(() => {
-    fetch(`${API_URL}/api/youtube/playlists`)
-      .then((res) => res.json())
-      .then((data) => {
-        // Group playlists by channel title
-        const grouped = data.reduce((acc, playlist) => {
-          const channel = playlist.snippet.channelTitle || 'Unknown';
-          if (!acc[channel]) acc[channel] = [];
-          acc[channel].push(playlist);
-          return acc;
-        }, {});
-        setGroupedPlaylists(grouped);
-      })
-      .catch((err) => console.error('Fetch error:', err));
+    const fetchPlaylists = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/youtube/playlists`);
+        const data = await res.json();
+
+        const groupByChannel = (playlists) =>
+          playlists.reduce((acc, { snippet }) => {
+            const channel = snippet?.channelTitle || 'Unknown';
+            acc[channel] = [...(acc[channel] || []), { snippet }];
+            return acc;
+          }, {});
+
+        setGroupedPlaylists(groupByChannel(data));
+      } catch (err) {
+        console.error('Fetch error:', err);
+      }
+    };
+
+    fetchPlaylists();
   }, []);
 
   return (

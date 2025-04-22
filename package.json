@@ -1,7 +1,7 @@
 {
   "name": "resources-ftri",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +12,7 @@
     "server": "cd server && npm run server"
   },
   "dependencies": {
+    "mongoose": "^8.13.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
