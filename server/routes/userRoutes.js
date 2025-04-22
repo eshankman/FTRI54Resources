@@ -15,6 +15,10 @@ router.post('/login', userController.verifyUser, (req, res) => {
   res.status(200).json({ message: 'Login successful', user: res.locals.user });
 });
 
+router.post('/users', userController.createUser, (req, res) => {
+  res.status(200).json({ message: 'User created', user: res.locals.newUser });
+});
+
 router.put('/users/:id', userController.updateUser, (req, res) => {
   res.status(200).json({ message: 'User updated', user: res.locals.updateUser });
 });

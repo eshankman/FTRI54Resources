@@ -3,7 +3,7 @@ import User from '../models/userModel.js';
 const userController = {};
 
 //* get all users
-userController.getAllUsers = async (req, res, next) => {
+userController.getAllUsers = async (req, res) => {
   try {
     const users = await User.find({});
     res.status(200).json(users);
@@ -18,8 +18,14 @@ userController.createUser = async (req, res, next) => {
   try {
     const { username, password } = req.body;
 
+    //* checks to see if username and password are provided
     if (!username || !password) {
       return next({ err: 'Missing username or password in request body' });
+    }
+
+    //* check password length  (set to 6 characters)
+    if (password.length < 6) {
+      return res.status(403).json({ error: 'Password must be at least 6 characters long' });
     }
 
     const newUser = new User({ username, password });

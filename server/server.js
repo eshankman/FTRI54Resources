@@ -3,12 +3,16 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
+import youtubeRoutes from './routes/youtubeRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+
 dotenv.config();
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-//! Connection to MongoDb via mongoose
+//! MongoDB connection
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
@@ -17,20 +21,18 @@ const connectDB = async () => {
     });
     console.log('👌 MongoDB connected');
   } catch (error) {
-    console.log('👎🏻 Error connecting to MongoDB:', error.message);
+    console.log('👎🏻 MongoDB connection error:', error.message);
     process.exit(1);
   }
 };
 
 connectDB();
 
-import youtubeRoutes from './routes/youtubeRoutes.js';
+//! Mount routes
 app.use('/api/youtube', youtubeRoutes);
-
-import userRoutes from './routes/userRoutes.js';
 app.use('/api/auth', userRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`🚀 Server listening on port ${PORT}`);
 });
