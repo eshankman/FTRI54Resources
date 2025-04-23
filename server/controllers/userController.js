@@ -32,7 +32,7 @@ userController.createUser = async (req, res, next) => {
     await newUser.save();
 
     res.locals.newUser = newUser;
-    return next();
+    return res.status(201).json({ user: newUser });
   } catch (err) {
     return next({ err: `userController.createUser failed: ${err.message}` });
   }
@@ -52,7 +52,7 @@ userController.verifyUser = async (req, res, next) => {
     req.session = { username };
     res.locals.user = existing;
 
-    return next();
+    return res.status(200).json({ user: existing });
   } catch (err) {
     return next({ err: `userController.verifyUser failed: ${err.message}` });
   }

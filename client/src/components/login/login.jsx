@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styles from './login.module.css';
-import { useNavigate } from 'react-router-dom';
 
 export default function LoginSignup() {
   const [action, setAction] = useState('Sign Up');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +25,7 @@ export default function LoginSignup() {
         console.log(`${action} successful`, data);
 
         localStorage.setItem('user', JSON.stringify(data.user));
-        navigate('/notes');
+        window.location.href = '/quotes';
       } else {
         const errorData = await response.json();
         console.error('Error:', errorData.message);

@@ -28,7 +28,7 @@ const connectDB = async () => {
 
 connectDB();
 
-//! Mount routes
+//! Mount routes = This is where the api call comes from the frontend
 app.use('/api/youtube', youtubeRoutes);
 app.use('/api/auth', userRoutes);
 
