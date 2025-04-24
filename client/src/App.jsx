@@ -6,6 +6,7 @@ import Contact from './components/contact/Contact';
 import Navbar from './components/navbar/Navbar';
 import Login from './components/login/login';
 import Quotes from './components/Quotes/Quotes';
+import ThankYou from './components/thankyou/ThankYou';
 import './App.css';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/quotes" element={<Quotes />} />
+          <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </div>
     </BrowserRouter>

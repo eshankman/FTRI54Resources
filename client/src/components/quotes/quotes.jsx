@@ -7,8 +7,15 @@ export default function Quotes() {
 
   const getQuote = async () => {
     try {
-      const response = await fetch('/api/quotes', {});
+      const apiUrl = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${apiUrl}/api/quotes`);
+
+      if (!response.ok) {
+        throw new Error(`Server responded with status ${response.status}`);
+      }
+
       const data = await response.json();
+
       if (data && data[0]) {
         setQuote(data[0].quote);
         setAuthor(data[0].author);
@@ -17,9 +24,9 @@ export default function Quotes() {
         setAuthor('No Author available');
       }
     } catch (error) {
+      console.error('Error fetching quote:', error);
       setQuote('Error fetching quote.');
-      setAuthor('Error fetch Author');
-      console.log(error);
+      setAuthor('Please try again later.');
     }
   };
 
@@ -28,8 +35,9 @@ export default function Quotes() {
       <h1>Welcome to your Future</h1>
       <img src="/bravo-xd.gif" alt="bravo clap" />
       <p>
-        You have done so much to get to this point.{<br />} Don't forget to stop and celebrate your progress and
-        success!
+        You have done so much to get to this point.
+        <br />
+        Don’t forget to stop and celebrate your progress and success!
       </p>
       <p>However, you can always return here for some random wisdom on those tough days.</p>
 

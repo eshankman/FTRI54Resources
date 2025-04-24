@@ -10,7 +10,7 @@ router.post('/contact', async (req, res) => {
     const newRequest = new Request({ name, email, message, contentRec });
     await newRequest.save();
 
-    res.redirect('/thank-you'); //=> thank you message page simple thank you for your request
+    res.status(200).json({ message: 'Success' });
   } catch (err) {
     console.error('Submission error', err);
     res.status(500).send('Server error');

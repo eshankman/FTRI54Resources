@@ -2,10 +2,40 @@ import React from 'react';
 import styles from './contact.module.css';
 
 export default function Contact() {
+  const handleSubmit = async (e) => {
+    //* default would be to reload on submit => we want redirect so will preventDefault
+    e.preventDefault();
+
+    //* Gets all the information from the form
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      //!sends request to the backend
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        //redirect to thank you page
+        window.location.href = '/thank-you';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      console.error('Form submission error', err);
+      alert('An error occurred. Please try again later');
+    }
+  };
+
   return (
     <div className={styles.formTemplate}>
       {/*prettier-ignore */}
-      <form action = '/contact' method = "POST">
+      <form onSubmit={handleSubmit}>
         <div className={styles.formInfo}>
           <label>Name</label>
           <input id="name" name="name" placeholder="Name" required />

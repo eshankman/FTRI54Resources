@@ -43,54 +43,26 @@ export default function LoginSignup() {
         Welcome to the FTRI Resources <br />
         {action}
       </h1>
-
+      {/*prettier-ignore*/}
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '2rem' }}>
         <input
           className={styles.user}
           placeholder="Username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          className={styles.pass}
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          onChange={(e) => setUsername(e.target.value)} />
+        <input className={styles.pass} type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-        <button type="submit" className={styles.btn}>
-          {action}
-        </button>
+        <button type="submit" className={styles.btn}> {action} </button>
 
-        <div className={styles.toggle}>
-          {action === 'Sign Up' ? (
-            <p>
-              Already have an account?{' '}
-              <span
-                onClick={() => setAction('Log In')}
-                style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}
-              >
-                Log In
-              </span>
-            </p>
-          ) : (
-            <p>
-              New here?{' '}
-              <span
-                onClick={() => setAction('Sign Up')}
-                style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}
-              >
-                Sign Up
-              </span>
-            </p>
+        <div className={styles.toggle}> {action === 'Sign Up' ? ( <p>  Already have an account?{' '}  
+          <span onClick={() => setAction('Log In')} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }} >Log In</span></p>) : ( <p> New here?{' '}
+           <span onClick={() => setAction('Sign Up')} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }} >Sign Up</span></p>
           )}
         </div>
 
         <div className={styles.forgotpassword}>
           <a href={`mailto:${import.meta.env.VITE_EMAILFORGOTPASSWORD}`}>
-            Forgot Password? <span>Click Here!</span>
-          </a>
+            Forgot Password? <span>Click Here!</span></a>
         </div>
       </form>
     </div>
