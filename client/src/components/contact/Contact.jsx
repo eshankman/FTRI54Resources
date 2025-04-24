@@ -14,7 +14,7 @@ export default function Contact() {
           <input id="email" name="email" placeholder="Email Address" type="email" required />
 
           <label>Message</label>
-          <textarea className={styles.message} required ></textarea>
+          <textarea className={styles.message} name="message" required></textarea>
 
          <div className={styles.radiobtn}>
            <label><input type="radio" name="contentRec" value="YouTube" /> YouTube Req.</label>

@@ -6,12 +6,14 @@ import mongoose from 'mongoose';
 import youtubeRoutes from './routes/youtubeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import quoteRoutes from './routes/quoteRoutes.js';
+import contactRoutes from './routes/contactRoutes.js'; // ✅ Import your contact form routes
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // ✅ This is needed for form submissions
 
 //! MongoDB connection
 const connectDB = async () => {
@@ -29,10 +31,16 @@ const connectDB = async () => {
 
 connectDB();
 
-//! Mount routes = This is where the api call comes from the frontend
+//! Mount routes
 app.use('/api/youtube', youtubeRoutes);
 app.use('/api/auth', userRoutes);
 app.use('/quotes', quoteRoutes);
+app.use('/', contactRoutes);
+
+//*
+app.get('/thank-you', (req, res) => {
+  res.send('<h1>Thank you for your request!</h1>');
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

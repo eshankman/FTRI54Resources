@@ -19,6 +19,22 @@ contactController.createContact = async (req, res) => {
   try {
     const { name, email, message, referrer } = req.body;
 
-    console.log({ name, email, message, referrer })
+    console.log({ name, email, message, referrer });
+
+    const newContact = new Contact({
+      name,
+      email,
+      message,
+      referrer,
+    });
+
+    await newContact.save();
+
+    res.redirect('/thank-you');
+  } catch (err) {
+    console.error('Error creating contact:', err.message);
+    res.status(500).json({ error: 'Failed to create contact submittal' });
   }
-}
+};
+
+export default contactController;
