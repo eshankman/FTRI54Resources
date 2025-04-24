@@ -1,42 +1,103 @@
-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: auto;
-  gap: 10px;
+* {
+  box-sizing: border-box;
 }
 
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f1117;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.login h1 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+form {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input Fields */
 .user,
 .pass {
-  padding: 5px;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
   font-size: 1rem;
+}
+
+.user::placeholder,
+.pass::placeholder {
+  color: #bbb;
 }
 
 .btn {
-  display: inline-block;
-  flex-direction: column;
-  background-color: #393f4d;
+  background-color: #333;
   color: white;
-  padding: 5px 10px;
+  padding: 0.75rem;
   font-size: 1rem;
   border: none;
-  border-radius: 3px;
+  border-radius: 0.5rem;
   cursor: pointer;
-  margin-left: 20px;
+  transition: background 0.2s ease;
 }
 
 .btn:hover {
   background-color: #feda6a;
-  color: slategrey;
+  color: #000;
 }
 
-.btnContainer {
-  display: block;
+.toggle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bbb;
 }
 
-.forgot-password {
-  display: flex;
-  margin-left: 5px;
-  margin-top: 15px;
-  color: blue;
+.toggleBtn {
+  background: none;
+  border: none;
+  color: #feda6a;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.toggleBtn:hover {
+  color: #fff;
+}
+
+.forgotpassword {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.forgotpassword a {
+  color: #feda6a;
+  text-decoration: none;
+}
+
+.forgotpassword span {
+  text-decoration: underline;
+  margin-left: 0.25rem;
 }

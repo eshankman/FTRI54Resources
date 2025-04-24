@@ -16,7 +16,8 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #071224;
+  /* background-color: #071224; */
+  background-color: #293241;
   height: 60px;
   display: flex;
   align-items: center;
@@ -39,7 +40,8 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: #393f4d;
+  /* color: #393f4d; */
+  color: #e0e6ed;
   padding: 0.5em 1em;
   transition: all 0.3s ease;
   font-size: 1rem;
@@ -48,4 +50,10 @@ body {
 .nav a:hover {
   color: #feda6a;
   font-weight: bold;
+}
+
+.nav a.active {
+  color: #feda6a;
+  font-weight: bold;
+  border-bottom: 2px solid #feda6a;
 }

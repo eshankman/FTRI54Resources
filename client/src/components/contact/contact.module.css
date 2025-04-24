@@ -1,57 +1,101 @@
-:root {
-  border-radius: 14px;
-}
-
-.formInfo {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid white;
-  width: 25vw;
-  padding: 20px 20px;
-  border-radius: 14px;
-  margin-bottom: 1.5rem;
-}
-
-.message {
-  height: 5rem;
-  resize: vertical;
-  white-space: pre-wrap;
-  overflow-wrap: normal;
-  justify-content: center;
-}
-
-.btn {
-  display: inline-block;
-  flex-direction: column;
-  background-color: #393f4d;
-  color: black;
-  padding: 5px 10px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-left: 20px;
-  margin-top: 1rem;
-}
-.btn:hover {
-  background-color: #feda6a;
-  color: black;
-}
-
-.btnContainer {
-  display: flex;
-  justify-content: flex-end;
-}
-.radiobtn {
-  margin-top: 1rem;
-  display: flex;
+* {
+  box-sizing: border-box;
 }
 
 .formTemplate {
   display: flex;
-  flex-direction: column;
-  background-color: #393f4d;
-  padding: 1rem;
-  border-radius: 16px;
-  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #0f1117;
+  min-height: 100vh;
+}
+
+.formInfo {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #e0e0e0;
+}
+
+.formInfo label {
+  display: block;
+  color: #e0e0e0;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  display: block;
+  padding: 0.75rem;
+  margin: 0.5rem 0 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #bbb;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  border: 1px solid #666;
+}
+
+.radiobtn {
+  margin-top: 1.5rem;
+}
+
+.radioGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  background-color: #2a2a2a;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: #eee;
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #333;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #feda6a;
+  color: #000;
 }

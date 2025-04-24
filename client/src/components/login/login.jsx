@@ -54,11 +54,22 @@ export default function LoginSignup() {
 
         <button type="submit" className={styles.btn}> {action} </button>
 
-        <div className={styles.toggle}> {action === 'Sign Up' ? ( <p>  Already have an account?{' '}  
-          <span onClick={() => setAction('Log In')} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }} >Log In</span></p>) : ( <p> New here?{' '}
-           <span onClick={() => setAction('Sign Up')} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }} >Sign Up</span></p>
-          )}
-        </div>
+        <div className={styles.toggle}>
+  {action === 'Sign Up' ? (
+    <p>
+      Already have an account?{' '}
+      <button type="button" onClick={() => setAction('Log In')} className={styles.toggleBtn}>
+        Log In</button></p>
+  ) : (
+    <p>
+      New here?{' '}
+      <button type="button" onClick={() => setAction('Sign Up')} className={styles.toggleBtn}>
+        Sign Up
+      </button>
+    </p>
+  )}
+</div>
+
 
         <div className={styles.forgotpassword}>
           <a href={`mailto:${import.meta.env.VITE_EMAILFORGOTPASSWORD}`}>
