@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding: 2rem;
   opacity: 0;
-  animation: fadeInSlow 10s ease-in 1 1s;
+  animation: fadeInSlow 3s ease-in 1 1s;
   animation-fill-mode: forwards;
 }
 
