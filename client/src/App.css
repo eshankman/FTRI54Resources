@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #4f5f77;
+  background-color: #1d1e22;
   color: ivory;
+}
+
+body {
+  background-color: #393f4d;
 }

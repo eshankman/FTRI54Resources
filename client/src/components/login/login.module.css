@@ -15,7 +15,7 @@ form {
 .btn {
   display: inline-block;
   flex-direction: column;
-  background-color: grey;
+  background-color: #393f4d;
   color: white;
   padding: 5px 10px;
   font-size: 1rem;
@@ -26,8 +26,8 @@ form {
 }
 
 .btn:hover {
-  background-color: rgb(58, 58, 61);
-  color: white;
+  background-color: #feda6a;
+  color: slategrey;
 }
 
 .btnContainer {

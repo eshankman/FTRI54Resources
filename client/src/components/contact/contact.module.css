@@ -1,3 +1,7 @@
+:root {
+  border-radius: 14px;
+}
+
 .formInfo {
   display: flex;
   flex-direction: column;
@@ -19,7 +23,7 @@
 .btn {
   display: inline-block;
   flex-direction: column;
-  background-color: grey;
+  background-color: #393f4d;
   color: black;
   padding: 5px 10px;
   font-size: 1rem;
@@ -30,7 +34,7 @@
   margin-top: 1rem;
 }
 .btn:hover {
-  background-color: blue;
+  background-color: #feda6a;
   color: black;
 }
 
@@ -46,4 +50,8 @@
 .formTemplate {
   display: flex;
   flex-direction: column;
+  background-color: #393f4d;
+  padding: 1rem;
+  border-radius: 16px;
+  width: fit-content;
 }
