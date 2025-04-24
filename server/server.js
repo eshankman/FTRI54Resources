@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 
 import youtubeRoutes from './routes/youtubeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import quoteRoutes from './routes/quoteRoutes.js';
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ connectDB();
 //! Mount routes = This is where the api call comes from the frontend
 app.use('/api/youtube', youtubeRoutes);
 app.use('/api/auth', userRoutes);
+app.use('/quotes', quoteRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

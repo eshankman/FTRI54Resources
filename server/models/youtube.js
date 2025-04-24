@@ -1,10 +1,14 @@
 import mongoose from 'mongoose';
 
-const videoSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const videoSchema = new Schema({
   videoId: String,
   title: String,
   thumbnail: String,
   playlistId: String,
 });
 
-export default mongoose.model('Video', videoSchema);
+const Video = mongoose.model('Video', videoSchema);
+
+export default Video;

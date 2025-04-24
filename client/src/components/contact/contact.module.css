@@ -17,11 +17,33 @@
 }
 
 .btn {
-  margin-top: 2rem;
+  display: inline-block;
+  flex-direction: column;
   background-color: grey;
+  color: black;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 1rem;
 }
-
 .btn:hover {
   background-color: blue;
   color: black;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.radiobtn {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.formTemplate {
+  display: flex;
+  flex-direction: column;
 }

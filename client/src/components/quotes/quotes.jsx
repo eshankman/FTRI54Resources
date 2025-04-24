@@ -4,15 +4,10 @@ import styles from './quotes.module.css';
 export default function Quotes() {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
-  const [loading, setLoading] = useState(false);
 
   const getQuote = async () => {
-    setLoading(true);
-
     try {
-      const response = await fetch('https://api.api-ninjas.com/v1/quotes', {
-        headers: { 'X-Api-Key': process.env.VITE_API_NINJAS },
-      });
+      const response = await fetch('/api/quotes', {});
       const data = await response.json();
       if (data && data[0]) {
         setQuote(data[0].quote);
@@ -25,10 +20,9 @@ export default function Quotes() {
       setQuote('Error fetching quote.');
       setAuthor('Error fetch Author');
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
+
   return (
     <div className={styles.quotePage}>
       <h1>Welcome to your Future</h1>
@@ -45,8 +39,8 @@ export default function Quotes() {
             “{quote}”{author && <footer>— {author}</footer>}
           </blockquote>
         )}
-        <button className={styles.generate} onClick={getQuote} disabled={loading}>
-          {loading ? 'Loading...' : 'Generate Quote'}
+        <button className={styles.generate} onClick={getQuote}>
+          Generate Quote
         </button>
       </div>
     </div>
