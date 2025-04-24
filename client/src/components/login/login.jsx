@@ -21,7 +21,7 @@ export default function LoginSignup() {
 
       if (response.ok) {
         const data = await response.json();
-        window.alert(`${action} successful!`);
+        // window.alert(`${action} successful!`);
         console.log(`${action} successful`, data);
 
         localStorage.setItem('user', JSON.stringify(data.user));
@@ -29,11 +29,11 @@ export default function LoginSignup() {
       } else {
         const errorData = await response.json();
         console.error('Error:', errorData.message);
-        window.alert(`Error: ${errorData.message}`);
+        // window.alert(`Error: ${errorData.message}`);
       }
     } catch (error) {
       console.error('Error:', error);
-      window.alert('Something went wrong. Please try again.');
+      // window.alert('Something went wrong. Please try again.');
     }
   };
 

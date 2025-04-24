@@ -1,4 +1,3 @@
-// server/server.js
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -8,7 +7,7 @@ import youtubeRoutes from './routes/youtubeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import quoteRoutes from './routes/quoteRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
-import documentationRoutes from './routes/documentationRoutes.js';
+import mapRoutes from './routes/mapRoutes.js';
 
 dotenv.config();
 
@@ -40,7 +39,7 @@ app.use('/api/youtube', youtubeRoutes);
 app.use('/api/auth', userRoutes);
 app.use('/api', quoteRoutes);
 app.use('/', contactRoutes);
-app.use('/api/table', documentationRoutes);
+app.use('/api/data', mapRoutes);
 
 // Server Start
 const PORT = process.env.PORT || 3000;

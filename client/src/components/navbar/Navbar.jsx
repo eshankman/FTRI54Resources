@@ -13,10 +13,10 @@ export default function NavBar() {
         {/*prettier-ignore*/}
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/vscode-extensions">VS Code Extensions</Link></li>
-          <li><Link to="/vscode-shortcuts">VS Code Shortcuts</Link></li>
+          <li><Link to="/VSCodeExt">VS Code Extensions</Link></li>
+          <li><Link to="/VSCodeSnip">VS Code Shortcuts</Link></li>
           <li><Link to="/github">Git/GitHub</Link></li>
-          <li><Link to="/documentation">Documentation</Link></li>
+          <li><Link to="/Documentation">Documentation</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/login">Login</Link></li>
         </ul>

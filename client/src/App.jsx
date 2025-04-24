@@ -7,7 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import Login from './components/login/login';
 import Quotes from './components/Quotes/Quotes';
 import ThankYou from './components/thankyou/ThankYou';
-import Documentation from './components/documentation/Documentation';
+import TablePage from './components/table/TablePage';
 
 import './App.css';
 
@@ -23,7 +23,9 @@ const App = () => {
           <Route path="/Login" element={<Login />} />
           <Route path="/quotes" element={<Quotes />} />
           <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/Documentation" element={<TablePage />} />
+          <Route path="/VSCodeExt" element={<TablePage />} />
+          <Route path="/VSCodeSnip" element={<TablePage />} />
         </Routes>
       </div>
     </BrowserRouter>
