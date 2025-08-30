@@ -25,7 +25,6 @@ const App = () => {
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/Documentation" element={<TablePage />} />
           <Route path="/VSCodeExt" element={<TablePage />} />
-          l.
           <Route path="/VSCodeSnip" element={<TablePage />} />
         </Routes>
       </div>
