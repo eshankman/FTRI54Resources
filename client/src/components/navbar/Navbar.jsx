@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <nav className={styles.nav}>
       <div className={styles.navLeft}>
-        <span className={styles.logo}>FTRI</span>
+        <span className={styles.logo}>FTRI 54</span>
       </div>
 
       <div className={styles.navRight}>

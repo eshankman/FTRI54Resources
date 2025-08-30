@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './components/mainPage/mainPage';
-// import YouTube from './components/youtube/YouTube';
+import YouTube from './components/youtube/YouTube';
 import Contact from './components/contact/Contact';
 import Navbar from './components/navbar/Navbar';
 import Login from './components/login/login';
@@ -18,13 +18,14 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          {/* <Route path="/youtube" element={<YouTube />} /> */}
+          <Route path="/youtube" element={<YouTube />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/quotes" element={<Quotes />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/Documentation" element={<TablePage />} />
           <Route path="/VSCodeExt" element={<TablePage />} />
+          l.
           <Route path="/VSCodeSnip" element={<TablePage />} />
         </Routes>
       </div>

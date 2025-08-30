@@ -72,7 +72,7 @@ export default function LoginSignup() {
 
 
         <div className={styles.forgotpassword}>
-          <a href={`mailto:${import.meta.env.VITE_EMAILFORGOTPASSWORD}`}>
+          <a href={`mailto: csftriprojects@gmail.com`}>
             Forgot Password? <span>Click Here!</span></a>
         </div>
       </form>
